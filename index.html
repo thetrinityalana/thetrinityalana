@@ -269,7 +269,30 @@
       .hero-h1 { font-size: 34px; }
       .not-hero h1 { font-size: 32px; }
       .footer-cols { flex-direction: column; gap: 28px; }
+      .cnn-cards { grid-template-columns: 1fr; }
     }
+
+    /* ─── CNN SECTION ─────────────────────────────────────── */
+    .cnn-featured { border-top: 3px solid #CC0001; }
+    .cnn-featured-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .cnn-logo-badge { background: #CC0001; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; padding: 5px 11px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 3px; }
+    .cnn-featured-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--text); line-height: 1.2; }
+    .cnn-featured-desc { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    .cnn-subsection { margin-top: 36px; }
+    .cnn-subsection-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+    .cnn-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .cnn-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
+    .cnn-card:hover { border-color: #CC0001; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .cnn-card-cover { aspect-ratio: 16/9; background: var(--off); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-bottom: 1px solid var(--border); overflow: hidden; }
+    .cnn-card-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .cnn-card-cover i { font-size: 28px; color: var(--border); }
+    .cnn-card-cover span { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .cnn-card-body { padding: 20px; }
+    .cnn-card-type { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #CC0001; margin-bottom: 8px; display: block; }
+    .cnn-card-title { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
+    .cnn-card-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+    .cnn-card-link { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #CC0001; border: 1px solid #CC0001; padding: 7px 18px; border-radius: 40px; display: inline-block; transition: all 0.2s; }
+    .cnn-card-link:hover { background: #CC0001; color: var(--white); }
   </style>
 </head>
 <body>
@@ -497,6 +520,99 @@
       <span class="eyebrow">Portfolio</span>
       <div class="page-title">Work</div>
       <p style="font-size:14px;color:var(--muted);margin-top:6px;">Links open the original work. Dashed buttons = link coming soon — click to add.</p>
+    </div>
+
+    <!-- ── CNN WORK ── -->
+    <div class="section cnn-featured" style="padding-top:32px;">
+
+      <div class="cnn-featured-header">
+        <span class="cnn-logo-badge">CNN</span>
+        <div>
+          <div class="cnn-featured-title">My Work at CNN</div>
+          <p class="cnn-featured-desc">Stories, segments, and digital content produced as a News Associate at CNN, Washington D.C. Paragraph descriptions coming soon.</p>
+        </div>
+      </div>
+
+      <!-- Stories -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Stories Written &amp; Contributed To</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <!-- REPLACE: <img src="your-cover-photo.jpg" alt="Mike Lawler story"> -->
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Politics · Reporting · 2026</span>
+              <div class="cnn-card-title">Mike Lawler &amp; Rand Paul's Son</div>
+              <p class="cnn-card-desc">Add your description here — what the story was about, your role, and why it matters.</p>
+              <a class="cnn-card-link" href="https://www.cnn.com/2026/05/13/politics/mike-lawler-rand-paul-son" target="_blank">Read on CNN ↗</a>
+            </div>
+          </div>
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <!-- REPLACE: <img src="your-cover-photo.jpg" alt="Government Shutdown story"> -->
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Politics · Live News · 2025</span>
+              <div class="cnn-card-title">Trump Government Shutdown Live Coverage</div>
+              <p class="cnn-card-desc">Add your description here — what the story was about, your role, and why it matters.</p>
+              <a class="cnn-card-link" href="https://www.cnn.com/politics/live-news/trump-government-shutdown-news-10-19-25" target="_blank">Read on CNN ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Segments Produced -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Segments Produced</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <!-- REPLACE: <img src="your-cover-photo.jpg" alt="Segment preview"> -->
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Segment · Producer</span>
+              <div class="cnn-card-title">Add segment title here</div>
+              <p class="cnn-card-desc">Add your description here — what the segment covered, your role as producer, and context.</p>
+              <a class="cnn-card-link" href="https://www.instagram.com/reel/DZV_3A1gbLE/" target="_blank">Watch ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Digital Videos -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Digital Videos Produced</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <!-- REPLACE: <img src="your-cover-photo.jpg" alt="Digital video preview"> -->
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Digital Video · Producer</span>
+              <div class="cnn-card-title">Add video title here</div>
+              <p class="cnn-card-desc">Add your description here — what the video covered, your role, and the impact.</p>
+              <a class="cnn-card-link" href="https://www.instagram.com/reel/DZqhV_bg_LU/" target="_blank">Watch ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
     <div class="section" style="padding-top:24px;">
