@@ -194,9 +194,9 @@
     .brand-logo-text { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
     /* INSTAGRAM EMBED FEED */
-    .ig-feed { max-width: 540px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
-    .ig-feed-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 10px 0 6px; border-top: 1px solid var(--border); }
-    .ig-feed-label:first-child { border-top: none; padding-top: 0; }
+    .ig-feed { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-bottom: 40px; }
+    .ig-feed-item { display: flex; flex-direction: column; gap: 10px; }
+    .ig-feed-label { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -348,8 +348,8 @@
       <h1 class="hero-h1">Telling stories that<br><em>move culture</em> forward.</h1>
       <p class="hero-sub">News Associate at CNN. Founder of Notoriety Creative Agency. Student Emmy + NABJ Award winner. Based in Washington, D.C.</p>
       <div class="hero-btns">
-        <button class="btn-blue" onclick="showPage('booking')">Book Me</button>
         <button class="btn-outline" onclick="showPage('work')">See My Work</button>
+        <button class="btn-blue" onclick="showPage('booking')">Book Me</button>
       </div>
     </div>
     <div class="hero-right">
@@ -628,29 +628,45 @@
     <!-- INSTAGRAM EMBED FEED -->
     <div class="ig-feed">
 
-      <div class="ig-feed-label">Branded Content</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRDNvr2koOQ/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DRDNvr2koOQ/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Branded Content</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DRDNvr2koOQ/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DRDNvr2koOQ/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">UGC / Product Placement</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWRiGOokT6R/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DWRiGOokT6R/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">UGC / Product Placement</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWRiGOokT6R/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DWRiGOokT6R/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">Event Coverage</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DYh5VHxJ7Sr/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DYh5VHxJ7Sr/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Event Coverage</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DYh5VHxJ7Sr/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DYh5VHxJ7Sr/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">Brand Ambassadorship</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV_74k2idrR/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DV_74k2idrR/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Brand Ambassadorship</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV_74k2idrR/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DV_74k2idrR/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">MOS Interviews</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV1yDS9kirq/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DV1yDS9kirq/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">MOS Interviews</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV1yDS9kirq/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DV1yDS9kirq/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">Experiential Partnerships</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DUHGUo9gH1i/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DUHGUo9gH1i/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Experiential Partnerships</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DUHGUo9gH1i/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DUHGUo9gH1i/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">Event Coverage</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DKiVmPNSf8S/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DKiVmPNSf8S/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Event Coverage</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DKiVmPNSf8S/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DKiVmPNSf8S/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
-      <div class="ig-feed-label">Event Promotion</div>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVeKl5OjdcX/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0 auto;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DVeKl5OjdcX/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      <div class="ig-feed-item">
+        <div class="ig-feed-label">Event Promotion</div>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVeKl5OjdcX/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:0;max-width:100%;min-width:0;padding:0;width:100%;"><div style="padding:16px;text-align:center;color:#999;font-size:13px;min-height:80px;display:flex;align-items:center;justify-content:center;"><a href="https://www.instagram.com/reel/DVeKl5OjdcX/" target="_blank" style="color:#3897f0;">View on Instagram →</a></div></blockquote>
+      </div>
 
     </div>
 
