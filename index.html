@@ -269,6 +269,46 @@
     .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 12px; color: var(--muted); }
 
+    /* NOTORIETY CASE STUDIES */
+    .not-results-bar { display: flex; justify-content: space-around; background: #111; border-bottom: 1px solid #1e1e1e; padding: 32px 48px; }
+    .not-stat { text-align: center; }
+    .not-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600; color: var(--white); display: block; line-height: 1; }
+    .not-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 6px; display: block; }
+    .cs-section { padding: 64px 48px; border-bottom: 1px solid var(--border); }
+    .cs-section:nth-child(odd) { background: var(--white); }
+    .cs-section:nth-child(even) { background: var(--off); }
+    .cs-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
+    .cs-num { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; display: block; }
+    .cs-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 500; color: var(--text); line-height: 1.1; margin-bottom: 14px; }
+    .cs-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 0; }
+    .cs-tag { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; background: var(--blue-light); color: var(--blue); padding: 5px 14px; border-radius: 40px; font-weight: 500; border: 1px solid var(--blue); }
+    .cs-desc { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 780px; margin-bottom: 32px; }
+    .cs-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .cs-review { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 28px 32px; background: var(--white); margin-bottom: 36px; }
+    .cs-review-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 14px; }
+    .cs-review-quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--text); line-height: 1.55; margin-bottom: 16px; }
+    .cs-review-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .cs-review-role { font-size: 12px; color: var(--muted); }
+    .cs-gallery-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 14px; }
+    .cs-gallery { overflow-x: auto; display: flex; gap: 14px; padding-bottom: 8px; scrollbar-width: thin; }
+    .cs-gallery::-webkit-scrollbar { height: 4px; }
+    .cs-gallery::-webkit-scrollbar-track { background: var(--border); border-radius: 4px; }
+    .cs-gallery::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 4px; }
+    .cs-ig-card { flex-shrink: 0; width: 200px; aspect-ratio: 9/16; background: var(--black); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-decoration: none; border: 1px solid #222; transition: border-color 0.2s, transform 0.2s; overflow: hidden; position: relative; }
+    .cs-ig-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .cs-ig-card i { font-size: 28px; color: rgba(255,255,255,0.6); }
+    .cs-ig-card span { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .not-cta-banner { background: var(--black); padding: 72px 48px; text-align: center; border-top: 1px solid #1e1e1e; }
+    .not-cta-banner h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
+    .not-cta-banner p { font-size: 15px; color: rgba(255,255,255,0.45); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .not-cta-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 800px; margin: 0 auto; }
+    .not-cta-option { background: #111; border: 1px solid #2a2a2a; border-radius: var(--radius); padding: 28px 24px; text-align: center; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .not-cta-option:hover { border-color: var(--blue); background: #161b40; }
+    .not-cta-option i { font-size: 24px; color: var(--blue); display: block; margin-bottom: 12px; }
+    .not-cta-option-name { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 8px; display: block; }
+    .not-cta-option-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+    @media (max-width: 960px) { .not-results-bar { flex-wrap: wrap; gap: 24px; } .not-cta-options { grid-template-columns: 1fr; } .cs-section { padding: 48px 24px; } .cs-header { flex-direction: column; } }
+
     /* FOOTER */
     .footer { background: var(--black); }
     .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding: 48px; gap: 40px; border-bottom: 1px solid #1a1a1a; }
@@ -727,17 +767,146 @@
       <a class="service-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank"><i class="ti ti-video service-icon"></i><div class="service-name">Video Production</div><p class="service-desc">Branded content, social video, and editorial production — scripted and unscripted — for brands, creatives, and agency clients.</p><span class="service-cta">Inquire →</span></a>
     </div>
   </div>
-  <div class="section">
-    <div class="section-header"><span class="section-label">Case Studies</span></div>
-    <div class="case-grid">
-      <div class="card"><div class="card-thumb"><i class="ti ti-shirt"></i></div><div class="card-body"><span class="card-tag">Client · Fashion</span><div class="card-title">Eight2Eight LLC — Brand Ambassador Program</div><div class="card-meta">Women's workwear · DMV</div></div></div>
-      <div class="card"><div class="card-thumb"><i class="ti ti-device-mobile"></i></div><div class="card-body"><span class="card-tag">Social Series</span><div class="card-title">The MoodBoard</div><div class="card-meta">Notoriety original social series</div></div></div>
-      <div class="card"><div class="card-thumb"><i class="ti ti-trophy"></i></div><div class="card-body"><span class="card-tag">Workshop · Sports Marketing</span><div class="card-title">Marcus Graham Project — MVP</div><div class="card-meta">Wizards, Fanatics, Moët Hennessy</div></div></div>
-      <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
-      <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
-      <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
+  <!-- RESULTS BAR -->
+  <div class="not-results-bar">
+    <div class="not-stat"><span class="not-stat-num">3+</span><span class="not-stat-label">Active Clients</span></div>
+    <div class="not-stat"><span class="not-stat-num">150+</span><span class="not-stat-label">Event Guests Welcomed</span></div>
+    <div class="not-stat"><span class="not-stat-num">135</span><span class="not-stat-label">Talent Network Members</span></div>
+    <div class="not-stat"><span class="not-stat-num">5mo</span><span class="not-stat-label">Avg. Client Engagement</span></div>
+  </div>
+
+  <!-- CASE STUDY 1: EIGHT2EIGHT -->
+  <div class="cs-section">
+    <div class="cs-header">
+      <div>
+        <span class="cs-num">Case Study 01</span>
+        <h2 class="cs-title">Eight2Eight LLC</h2>
+        <div class="cs-tags">
+          <span class="cs-tag">Social Media Management</span>
+          <span class="cs-tag">Creative Direction</span>
+          <span class="cs-tag">Social Media Strategy</span>
+        </div>
+      </div>
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Inquire About This Service →</a>
+    </div>
+    <p class="cs-desc">Over the course of five months, Notoriety took full ownership of Eight2Eight's social media presence — from concept to execution. We planned and art-directed content shoots, scouted models, developed mood boards, and creative-directed every visual touchpoint to align with the brand's identity. Our team built and executed a comprehensive content strategy tailored to drive discovery, including platform-specific SEO to expand their reach to new audiences. We identified and cultivated community partnerships to amplify brand awareness, and saw the brand's product marketing plan through from development to launch. Every stage of the client journey — from community engagement in DMs and comments to managing brand collaborations — was handled with intentionality and care.</p>
+    <div class="cs-actions">
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social Media Management</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Creative Direction</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social Media Strategy</a>
+    </div>
+    <div class="cs-review">
+      <span class="cs-review-label">Client Review</span>
+      <div class="cs-review-quote">"Add Eight2Eight client testimonial here."</div>
+      <div class="cs-review-name">Client Name</div>
+      <div class="cs-review-role">Founder, Eight2Eight LLC</div>
+    </div>
+    <span class="cs-gallery-label">Work Samples</span>
+    <div class="cs-gallery">
+      <a class="cs-ig-card" href="https://www.instagram.com/reel/DZI4aU_v7Ut/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
+      <a class="cs-ig-card" href="https://www.instagram.com/reel/DZa_JgEPh_d/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
+      <a class="cs-ig-card" href="https://www.instagram.com/reel/DXaUkA9j42g/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
     </div>
   </div>
+
+  <!-- CASE STUDY 2: THE CREATIVE CLASSIC / MOVEMENT STREET -->
+  <div class="cs-section">
+    <div class="cs-header">
+      <div>
+        <span class="cs-num">Case Study 02</span>
+        <h2 class="cs-title">The Creative Classic<br><span style="font-size:0.65em;color:var(--muted);">Movement Street</span></h2>
+        <div class="cs-tags">
+          <span class="cs-tag">Event Production</span>
+          <span class="cs-tag">Vendor Management</span>
+          <span class="cs-tag">Creative Direction</span>
+          <span class="cs-tag">Visual Storytelling</span>
+        </div>
+      </div>
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Inquire About This Service →</a>
+    </div>
+    <p class="cs-desc">For The Movement Street's Creative Classic, Notoriety served as a full-service production and creative partner from pre-show logistics to on-site execution. We managed the entire vendor ecosystem — scouting talent and designers, handling intake and finance tracking, and coordinating every vendor's needs on show day to ensure seamless merchandising and presentation. Beyond operations, we led the creative vision: marketing the classic designers featured in the show through strategic visual storytelling, directing video shoots and on-camera interviews, and rolling out a social series strategy that built anticipation before the event and sustained engagement after. Every decision was made with the goal of elevating the designers in the room and the brand behind the show.</p>
+    <div class="cs-actions">
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Event Production</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Creative Direction</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Visual Storytelling</a>
+    </div>
+    <div class="cs-review">
+      <span class="cs-review-label">Client Review</span>
+      <div class="cs-review-quote">"Add Movement Street client testimonial here."</div>
+      <div class="cs-review-name">Client Name</div>
+      <div class="cs-review-role">Founder, Movement Street</div>
+    </div>
+    <span class="cs-gallery-label">Work Samples</span>
+    <div class="cs-gallery">
+      <a class="cs-ig-card" href="https://www.instagram.com/reel/DVZk-9kEX3K/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
+      <a class="cs-ig-card" href="https://www.instagram.com/reel/DWSF9PpkarT/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
+    </div>
+  </div>
+
+  <!-- CASE STUDY 3: ÌPÀDÉ -->
+  <div class="cs-section">
+    <div class="cs-header">
+      <div>
+        <span class="cs-num">Case Study 03</span>
+        <h2 class="cs-title">Ìpàdé DC</h2>
+        <div class="cs-tags">
+          <span class="cs-tag">Event Production</span>
+          <span class="cs-tag">Content Creation</span>
+          <span class="cs-tag">Social Media Strategy</span>
+          <span class="cs-tag">Visual Storytelling</span>
+        </div>
+      </div>
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Inquire About This Service →</a>
+    </div>
+    <p class="cs-desc"><a href="https://www.ipade.online/" target="_blank" style="color:var(--blue);">Ìpàdé DC</a> is a Black-woman owned event and meeting space in DuPont Circle, designed for women of color entrepreneurs, professionals, and creatives. Notoriety's partnership with Ìpàdé began in January 2025 with Take Notes — a live talk show event featuring community leaders, live music, and craft cocktails. In June, we launched Show Your Work in partnership with Ìpàdé and Dupont Circle Art Walk: a recurring artistic parlor where artists and creatives present new projects and pieces to an engaged community audience. Since day one, Notoriety has led content creation, event promotion, and visual storytelling for every activation in the space. The results speak for themselves — over 150 guests welcomed, an average of 65 attendees per event, 6 artists partnered, and 135 individuals recruited into Ìpàdé's growing talent network and mailing list. The brand's digital footprint has grown exponentially through our ongoing partnership.</p>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px;">
+      <div class="content-stat"><i class="ti ti-users"></i><div class="content-stat-num">150+</div><div class="content-stat-label">Guests Welcomed</div></div>
+      <div class="content-stat"><i class="ti ti-calendar-event"></i><div class="content-stat-num">65</div><div class="content-stat-label">Avg. Monthly Attendees</div></div>
+      <div class="content-stat"><i class="ti ti-palette"></i><div class="content-stat-num">6</div><div class="content-stat-label">Artists Partnered</div></div>
+      <div class="content-stat"><i class="ti ti-mail"></i><div class="content-stat-num">135</div><div class="content-stat-label">Talent Network Members</div></div>
+    </div>
+    <div class="cs-actions">
+      <a class="btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Event Production</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Content Creation</a>
+      <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social Strategy</a>
+    </div>
+    <div class="cs-review">
+      <span class="cs-review-label">Client Review</span>
+      <div class="cs-review-quote">"Add Ìpàdé client testimonial here."</div>
+      <div class="cs-review-name">Client Name</div>
+      <div class="cs-review-role">Founder, Ìpàdé DC</div>
+    </div>
+    <span class="cs-gallery-label">Work Samples</span>
+    <div class="cs-gallery">
+      <a class="cs-ig-card" href="https://www.instagram.com/p/DFK6Js7RLM4/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Post</span></a>
+      <a class="cs-ig-card" href="https://www.instagram.com/reels/DMLYm2YNlVC/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Reel</span></a>
+      <a class="cs-ig-card" href="https://www.instagram.com/p/DNTnTU1xbbw/" target="_blank"><i class="ti ti-brand-instagram"></i><span>View Post</span></a>
+    </div>
+  </div>
+
+  <!-- BOOKING CTA BANNER -->
+  <div class="not-cta-banner">
+    <h2>Ready to work together?</h2>
+    <p>Whether you're looking for a discovery call, a strategy deep-dive, or ready to hit the ground running — there's a path for you.</p>
+    <div class="not-cta-options">
+      <a class="not-cta-option" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+        <i class="ti ti-phone"></i>
+        <span class="not-cta-option-name">Book an Intro Call</span>
+        <span class="not-cta-option-desc">15 minutes to see if we're the right fit for your brand.</span>
+      </a>
+      <a class="not-cta-option" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+        <i class="ti ti-chart-arrows"></i>
+        <span class="not-cta-option-name">Book a Strategy Session</span>
+        <span class="not-cta-option-desc">A focused session to map out your brand's creative roadmap.</span>
+      </a>
+      <a class="not-cta-option" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+        <i class="ti ti-clipboard-text"></i>
+        <span class="not-cta-option-name">Fill Out the Intake Form</span>
+        <span class="not-cta-option-desc">Tell us about your brand and let us put together a proposal.</span>
+      </a>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="footer-top"><div><div class="footer-brand">Notoriety <span>Creative</span></div><p class="footer-tagline">A Trinity Alana Company · Washington, D.C.</p></div><div class="footer-cols"><div><span class="footer-col-title">Services</span><a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social Media Management</a><a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Event Production</a><a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social & Digital Strategy</a><a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Video Production</a></div></div></div>
     <div class="footer-bottom"><span class="footer-copy">© 2026 Notoriety Creative Agency. All rights reserved.</span></div>
