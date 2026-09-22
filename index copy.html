@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity Alana — Journalist · Host · Creative Director</title>
+  <meta name="description" content="Trinity Alana is a Howard University-trained broadcast journalist, on-camera host, and founder of Notoriety Creative Agency. Based in Washington, D.C." />
+  <meta property="og:title" content="Trinity Alana" />
+  <meta property="og:description" content="Journalist. Host. Creative Director. Founder of Notoriety Creative Agency." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    /* ─── RESET & VARIABLES ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off: #F6F6F3;
+      --blue: #1A5FA8;
+      --blue-light: #EAF1FB;
+      --blue-mid: #2B74C0;
+      --border: #E2E2DE;
+      --muted: #767672;
+      --text: #1A1A18;
+      --radius: 10px;
+      --radius-sm: 6px;
+      --green: #4ade80;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font-family: 'DM Sans', sans-serif; cursor: pointer; }
+
+    /* ─── PAGE SYSTEM ───────────────────────────────────────── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── NAV ───────────────────────────────────────────────── */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 60px; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; cursor: pointer; }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-link { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); border: none; background: none; padding: 0; font-family: 'DM Sans', sans-serif; transition: color 0.2s; cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--white); }
+    .nav-cta { background: var(--blue); color: var(--white); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 20px; border-radius: 40px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--blue-mid); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); }
+    .mobile-menu { display: none; flex-direction: column; background: var(--black); padding: 24px 32px 32px; border-bottom: 1px solid #222; }
+    .mobile-menu button { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); padding: 13px 0; border-bottom: 1px solid #1e1e1e; display: block; background: none; border-left: none; border-right: none; border-top: none; text-align: left; width: 100%; font-family: 'DM Sans', sans-serif; cursor: pointer; }
+    .mobile-menu button:hover { color: var(--white); }
+    .mobile-cta { display: inline-block !important; margin-top: 20px; background: var(--blue) !important; color: var(--white) !important; padding: 10px 24px !important; border-radius: 40px !important; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; border: none !important; width: auto !important; cursor: pointer; }
+
+    /* ─── BUTTONS ───────────────────────────────────────────── */
+    .btn-blue { background: var(--blue); color: var(--white); padding: 12px 28px; border-radius: 40px; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; border: none; display: inline-block; transition: background 0.2s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-blue:hover { background: var(--blue-mid); }
+    .btn-dark { background: var(--black); color: var(--white); padding: 12px 28px; border-radius: 40px; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; border: none; display: inline-block; transition: opacity 0.2s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-dark:hover { opacity: 0.75; }
+    .btn-outline { background: transparent; color: var(--text); padding: 11px 26px; border-radius: 40px; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); display: inline-block; transition: border-color 0.2s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-outline:hover { border-color: var(--text); }
+    .btn-outline-blue { background: transparent; color: var(--blue); padding: 11px 26px; border-radius: 40px; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--blue); display: inline-block; transition: all 0.2s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-outline-blue:hover { background: var(--blue); color: var(--white); }
+    .btn-white-outline { background: transparent; color: var(--white); padding: 11px 26px; border-radius: 40px; font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); display: inline-block; transition: border-color 0.2s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-white-outline:hover { border-color: rgba(255,255,255,0.65); }
+
+    /* ─── LAYOUT HELPERS ────────────────────────────────────── */
+    .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; display: block; }
+    .eyebrow-blue { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 500; line-height: 1.05; color: var(--text); margin-bottom: 14px; }
+    .section-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 28px; }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; }
+    .see-all { font-size: 12px; color: var(--blue); letter-spacing: 0.04em; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; }
+    .see-all:hover { text-decoration: underline; }
+    .section { padding: 72px 48px; border-bottom: 1px solid var(--border); }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ─── TRUST BAR ─────────────────────────────────────────── */
+    .trust-bar { background: var(--off); border-bottom: 1px solid var(--border); padding: 15px 0 15px 48px; display: flex; align-items: center; gap: 28px; overflow: hidden; }
+    .trust-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .trust-scroll-wrap { overflow: hidden; flex: 1; }
+    .trust-track { display: flex; gap: 48px; align-items: center; white-space: nowrap; animation: trust-scroll 28s linear infinite; width: max-content; }
+    .trust-logo { font-size: 12px; font-weight: 600; color: var(--text); opacity: 0.45; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    @keyframes trust-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero { display: grid; grid-template-columns: 1fr 520px; min-height: 600px; border-bottom: 1px solid var(--border); }
+    .hero-left { padding: 80px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500; line-height: 1.05; color: var(--text); margin-bottom: 18px; }
+    .hero-h1 em { color: var(--blue); font-style: normal; }
+    .hero-sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; max-width: 420px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-right { background: var(--off); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .hero-right::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 100px; background: linear-gradient(to right, var(--white), transparent); z-index: 2; pointer-events: none; }
+    .hero-photo-placeholder { text-align: center; padding: 40px; z-index: 1; }
+    .hero-photo-placeholder i { font-size: 40px; color: var(--border); display: block; margin-bottom: 14px; }
+    .hero-photo-placeholder p { font-size: 12px; color: var(--muted); line-height: 1.6; max-width: 200px; margin: 0 auto; }
+
+    /* ─── PILLARS ────────────────────────────────────────────── */
+    .pillars { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--border); }
+    .pillar { padding: 40px 36px; border-right: 1px solid var(--border); }
+    .pillar:last-child { border-right: none; }
+    .pillar-icon { font-size: 26px; color: var(--blue); margin-bottom: 16px; display: block; }
+    .pillar-name { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
+    .pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .pillar-link { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; padding: 0; }
+    .pillar-link:hover { text-decoration: underline; }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .cards-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .cards-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s, transform 0.2s; cursor: pointer; }
+    .card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .card-thumb { background: var(--off); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .card-thumb i { font-size: 28px; color: var(--border); }
+    .card-body { padding: 14px 16px; }
+    .card-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; display: block; }
+    .card-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
+    .card-meta { font-size: 11px; color: var(--muted); }
+    .card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 6px; }
+
+    /* ─── NOTORIETY EXPERIENCE CARD ─────────────────────────── */
+    .card.notoriety-card { background: var(--black); border-color: var(--black); }
+    .card.notoriety-card .card-tag { color: var(--green); }
+    .card.notoriety-card .card-title { color: var(--white); }
+    .card.notoriety-card .card-meta { color: rgba(255,255,255,0.45); }
+    .card.notoriety-card .card-desc { color: var(--green); }
+    .card.notoriety-card:hover { border-color: var(--green); }
+
+    /* ─── PLACEHOLDER / ADD ZONES ───────────────────────────── */
+    .placeholder-zone { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 48px 24px; text-align: center; background: var(--off); }
+    .placeholder-zone i { font-size: 30px; color: var(--border); display: block; margin-bottom: 14px; }
+    .placeholder-zone .ph-title { font-size: 15px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
+    .placeholder-zone .ph-sub { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 360px; margin: 0 auto 20px; }
+    .add-card { border: 1.5px dashed var(--border); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 160px; background: var(--off); transition: border-color 0.2s; }
+    .add-card:hover { border-color: var(--blue); }
+    .add-card i { font-size: 22px; color: var(--muted); }
+    .add-card span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+    /* ─── WORK PAGE ─────────────────────────────────────────── */
+    /* Intro boxes */
+    .work-intro-boxes { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
+    .work-intro-box { border-right: 1px solid var(--border); overflow: hidden; cursor: pointer; position: relative; aspect-ratio: 4/3; }
+    .work-intro-box:last-child { border-right: none; }
+    .work-intro-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+    .work-intro-box:hover img { transform: scale(1.04); }
+    .work-intro-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 55%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; }
+    .work-intro-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 5px; }
+    .work-intro-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; color: var(--white); line-height: 1.15; }
+    .work-intro-placeholder { width: 100%; height: 100%; background: var(--black); display: flex; align-items: center; justify-content: center; }
+    .work-intro-placeholder i { font-size: 36px; color: #333; }
+
+    /* CNN section */
+    .cnn-featured { border-top: 3px solid #CC0001; }
+    .cnn-featured-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .cnn-logo-badge { background: #CC0001; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; padding: 5px 11px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 3px; }
+    .cnn-featured-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--text); line-height: 1.2; }
+    .cnn-featured-desc { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    .cnn-subsection { margin-top: 40px; }
+    .cnn-subsection-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+    .cnn-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .cnn-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
+    .cnn-card:hover { border-color: #CC0001; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .cnn-card-cover { aspect-ratio: 16/9; background: var(--off); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
+    .cnn-card-cover img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .cnn-card-cover video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cnn-card-cover i { font-size: 28px; color: var(--border); position: relative; z-index: 1; }
+    .cnn-card-cover span { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); position: relative; z-index: 1; }
+    .cnn-card-body { padding: 16px; }
+    .cnn-card-type { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #CC0001; margin-bottom: 7px; display: block; }
+    .cnn-card-title { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
+    .cnn-card-desc { font-size: 12px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .cnn-card-link { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #CC0001; border: 1px solid #CC0001; padding: 6px 16px; border-radius: 40px; display: inline-block; transition: all 0.2s; }
+    .cnn-card-link:hover { background: #CC0001; color: var(--white); }
+
+    /* DNC sub-section */
+    .dnc-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .dnc-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); border: 1px solid var(--blue); border-radius: 40px; padding: 5px 14px; margin-bottom: 16px; }
+    .dnc-badge-text { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); font-weight: 600; }
+    .dnc-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--text); line-height: 1.2; margin-bottom: 10px; }
+    .dnc-meta { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .dnc-cover { aspect-ratio: 21/9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 0; }
+    .dnc-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .dnc-cover-placeholder { width: 100%; height: 100%; background: var(--off); display: flex; align-items: center; justify-content: center; }
+    .dnc-cover-placeholder i { font-size: 36px; color: var(--border); }
+
+    /* Digital Reporting carousel */
+    .video-carousel-outer { overflow: hidden; cursor: grab; }
+    .video-carousel-track { display: flex; gap: 16px; animation: carousel-scroll 35s linear infinite; width: max-content; padding-bottom: 4px; }
+    .video-carousel-track:hover { animation-play-state: paused; }
+    @keyframes carousel-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .vid-card { width: 260px; flex-shrink: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: border-color 0.2s; }
+    .vid-card:hover { border-color: var(--blue); }
+    .vid-thumb { position: relative; aspect-ratio: 16/9; background: var(--black); overflow: hidden; cursor: pointer; }
+    .vid-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .vid-thumb:hover img { opacity: 0.85; }
+    .vid-thumb iframe { width: 100%; height: 100%; border: none; position: absolute; inset: 0; }
+    .vid-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .vid-play-btn i { font-size: 38px; color: var(--white); filter: drop-shadow(0 2px 10px rgba(0,0,0,0.6)); transition: transform 0.2s; }
+    .vid-thumb:hover .vid-play-btn i { transform: scale(1.1); }
+    .vid-info { padding: 12px 14px; }
+    .vid-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
+    .vid-date { font-size: 11px; color: var(--muted); }
+
+    /* Content section */
+    .content-header { margin-bottom: 36px; }
+    .content-handle { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .content-platform { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .content-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+    .content-stat i { font-size: 20px; color: var(--blue); display: block; margin-bottom: 6px; }
+    .content-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--text); line-height: 1; }
+    .content-stat-label { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+    /* Brand scroll */
+    .brand-scroll-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; margin: 36px 0 40px; }
+    .brand-scroll-track { display: flex; gap: 56px; align-items: center; animation: trust-scroll 18s linear infinite; width: max-content; }
+    .brand-logo-text { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+    /* Service reel grid */
+    .service-reel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+    .service-reel-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; cursor: pointer; }
+    .service-reel-card:hover { border-color: var(--blue); }
+    .service-reel-thumb { aspect-ratio: 9/16; background: var(--black); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .service-reel-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+    .service-reel-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); }
+    .service-reel-play i { font-size: 30px; color: rgba(255,255,255,0.9); }
+    .service-reel-label { padding: 12px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); border-top: 1px solid var(--border); }
+
+    /* Additional Projects */
+    .projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .proj-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
+    .proj-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .proj-card-link { text-decoration: none; display: block; }
+    .proj-thumb { aspect-ratio: 4/3; background: var(--off); display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .proj-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .proj-thumb i { font-size: 30px; color: var(--border); }
+    .proj-body { padding: 14px; }
+    .proj-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; display: block; }
+    .proj-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
+    .proj-btns { display: flex; flex-direction: column; gap: 5px; }
+    .proj-btn { font-size: 11px; color: var(--blue); background: var(--blue-light); border: none; padding: 6px 10px; border-radius: var(--radius-sm); text-decoration: none; display: block; transition: background 0.2s; text-align: left; font-family: 'DM Sans', sans-serif; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .proj-btn:hover { background: var(--blue); color: var(--white); }
+
+    /* ABOUT ─────────────────────────────────────────────────── */
+    .about-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
+    .about-photo { width: 240px; aspect-ratio: 3/4; background: var(--off); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .about-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; line-height: 1.1; color: var(--text); margin-bottom: 22px; }
+    .about-body p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+    .award-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+    .award-chip { display: flex; align-items: flex-start; gap: 12px; }
+    .award-chip i { font-size: 20px; color: var(--blue); flex-shrink: 0; margin-top: 2px; }
+    .award-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .award-sub { font-size: 12px; color: var(--muted); }
+
+    /* FOOTER ────────────────────────────────────────────────── */
+    .footer { background: var(--black); }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding: 48px; gap: 40px; border-bottom: 1px solid #1a1a1a; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
+    .footer-brand span { color: var(--blue); }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6; max-width: 280px; }
+    .footer-cols { display: flex; gap: 48px; }
+    .footer-col-title { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-bottom: 16px; }
+    .footer-col-link { font-size: 13px; color: rgba(255,255,255,0.5); display: block; margin-bottom: 10px; transition: color 0.2s; cursor: pointer; background: none; border: none; text-align: left; font-family: 'DM Sans', sans-serif; padding: 0; }
+    .footer-col-link:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.22); }
+    .footer-social { display: flex; gap: 20px; }
+    .footer-social a { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; transition: color 0.2s; }
+    .footer-social a:hover { color: var(--white); }
+
+    /* NOTORIETY ─────────────────────────────────────────────── */
+    .not-hero { background: var(--black); padding: 96px 48px; border-bottom: 1px solid #1a1a1a; }
+    .not-hero-inner { max-width: 640px; }
+    .not-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 500; color: var(--white); line-height: 1.05; margin-bottom: 18px; }
+    .not-hero p { font-size: 15px; color: rgba(255,255,255,0.48); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+    .not-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .service-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; background: var(--white); display: block; transition: border-color 0.2s, background 0.2s; text-decoration: none; }
+    .service-card:hover { border-color: var(--blue); background: var(--blue-light); }
+    .service-icon { font-size: 26px; color: var(--blue); margin-bottom: 14px; display: block; }
+    .service-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .service-cta { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+    .case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+
+    /* BLOG ──────────────────────────────────────────────────── */
+    .blog-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .blog-cat { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 18px; border-radius: 40px; border: 1px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    .blog-cat.active, .blog-cat:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+    .blog-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s, transform 0.2s; display: block; }
+    .blog-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .blog-thumb { background: var(--off); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .blog-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-thumb i { font-size: 28px; color: var(--border); }
+    .blog-body { padding: 18px 20px; }
+    .blog-cat-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: block; }
+    .blog-title { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
+    .blog-excerpt { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+    .blog-meta { font-size: 11px; color: var(--muted); }
+
+    /* BOOKING ───────────────────────────────────────────────── */
+    .booking-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .booking-types { display: flex; flex-direction: column; gap: 10px; }
+    .booking-type { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; cursor: pointer; transition: border-color 0.2s; text-align: left; font-family: 'DM Sans', sans-serif; }
+    .booking-type.sel { border-color: var(--blue); background: var(--blue-light); }
+    .booking-type:hover { border-color: var(--blue); }
+    .bt-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .bt-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .agency-nudge { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-top: 8px; background: var(--off); }
+    .agency-nudge-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 8px; }
+    .agency-nudge-text { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .booking-form-wrap { background: var(--off); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+    .form-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 24px; }
+    .form-field { margin-bottom: 18px; }
+    .form-label { font-size: 12px; font-weight: 500; color: var(--text); display: block; margin-bottom: 6px; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); background: var(--white); transition: border-color 0.2s; }
+    .form-textarea { min-height: 100px; resize: vertical; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--blue); }
+    .submit-btn { width: 100%; padding: 14px; background: var(--blue); color: var(--white); border: none; border-radius: 40px; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+    .submit-btn:hover { background: var(--blue-mid); }
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .stat-card { background: var(--off); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 12px; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 320px; }
+      .hero-right::before { display: none; }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-photo { width: 160px; }
+      .work-intro-boxes { grid-template-columns: 1fr; }
+      .cnn-cards { grid-template-columns: 1fr; }
+      .service-reel-grid { grid-template-columns: repeat(2,1fr); }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
+      .booking-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .nav { padding: 0 24px; }
+      .section { padding: 48px 24px; }
+      .cards-3, .cards-2, .case-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .page-title { font-size: 36px; }
+      .hero-h1 { font-size: 34px; }
+      .not-hero h1 { font-size: 32px; }
+      .footer-cols { flex-direction: column; gap: 28px; }
+      .footer-top { flex-direction: column; padding: 32px 24px; }
+      .footer-bottom { padding: 16px 24px; flex-direction: column; gap: 8px; }
+      .service-reel-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
+      .content-stats { gap: 24px; }
+      .trust-bar { padding: 12px 0 12px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav class="nav">
+    <div class="nav-logo" onclick="showPage('home')">Trinity <span>Alana</span></div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home" onclick="showPage('home')">Home</button>
+      <button class="nav-link" data-page="about" onclick="showPage('about')">About</button>
+      <button class="nav-link" data-page="work" onclick="showPage('work')">Work</button>
+      <button class="nav-link" data-page="notoriety" onclick="showPage('notoriety')">Notoriety</button>
+      <button class="nav-link" data-page="blog" onclick="showPage('blog')">Take Notes</button>
+    </div>
+    <button class="nav-cta" onclick="showPage('booking')">Book Me</button>
+    <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="showPage('home');toggleMobile()">Home</button>
+    <button onclick="showPage('about');toggleMobile()">About</button>
+    <button onclick="showPage('work');toggleMobile()">Work</button>
+    <button onclick="showPage('notoriety');toggleMobile()">Notoriety</button>
+    <button onclick="showPage('blog');toggleMobile()">Take Notes</button>
+    <button class="mobile-cta" onclick="showPage('booking');toggleMobile()">Book Me</button>
+  </div>
+
+  <!-- ═══════════════ HOME ═══════════════ -->
+  <div id="page-home" class="page active">
+
+    <div class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Journalist · Host · Creative Director</span>
+        <h1 class="hero-h1">Telling stories that<br><em>move culture</em> forward.</h1>
+        <p class="hero-sub">News Associate at CNN. Founder of Notoriety Creative Agency. Student Emmy + NABJ Award winner. Based in Washington, D.C.</p>
+        <div class="hero-btns">
+          <button class="btn-blue" onclick="showPage('booking')">Book Me</button>
+          <button class="btn-outline" onclick="showPage('work')">See My Work</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="headshot.jpg" alt="Trinity Alana" />
+      </div>
+    </div>
+
+    <div class="trust-bar">
+      <span class="trust-label">As seen on</span>
+      <div class="trust-scroll-wrap">
+        <div class="trust-track">
+          <span class="trust-logo">CNN</span>
+          <span class="trust-logo">Blavity</span>
+          <span class="trust-logo">AfroTech</span>
+          <span class="trust-logo">Spotify</span>
+          <span class="trust-logo">CultureCon</span>
+          <span class="trust-logo">Broccoli City Festival</span>
+          <span class="trust-logo">Howard Homecoming</span>
+          <span class="trust-logo">NABJ</span>
+          <!-- duplicate for seamless loop -->
+          <span class="trust-logo">CNN</span>
+          <span class="trust-logo">Blavity</span>
+          <span class="trust-logo">AfroTech</span>
+          <span class="trust-logo">Spotify</span>
+          <span class="trust-logo">CultureCon</span>
+          <span class="trust-logo">Broccoli City Festival</span>
+          <span class="trust-logo">Howard Homecoming</span>
+          <span class="trust-logo">NABJ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <i class="ti ti-news pillar-icon"></i>
+        <div class="pillar-name">Journalism</div>
+        <p class="pillar-desc">Print, broadcast, and audio reporting. NABJ Award winner. Student Emmy recipient. Currently reporting at CNN.</p>
+        <button class="pillar-link" onclick="showPage('work')">View my work →</button>
+      </div>
+      <div class="pillar">
+        <i class="ti ti-microphone-2 pillar-icon"></i>
+        <div class="pillar-name">Hosting & Talent</div>
+        <p class="pillar-desc">Live events from AfroTech to Howard Homecoming Yardfest. Celebrity interviews. On-camera and on-air personality.</p>
+        <button class="pillar-link" onclick="showPage('booking')">Book me →</button>
+      </div>
+      <div class="pillar">
+        <i class="ti ti-building-store pillar-icon"></i>
+        <div class="pillar-name">Notoriety Agency</div>
+        <p class="pillar-desc">Creative agency connecting DMV artists and creatives with brand partnerships, events, and strategic visibility.</p>
+        <button class="pillar-link" onclick="showPage('notoriety')">See our work →</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Latest Work</span>
+        <button class="see-all" onclick="showPage('work')">View all →</button>
+      </div>
+      <div class="cards-3">
+
+        <div class="card" onclick="showPageAndScroll('work','dnc')">
+          <div class="card-thumb">
+            <img src="dnc-cover.png" alt="2024 DNC Coverage" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Journalism</span>
+            <div class="card-title">2024 DNC — Kamala Harris' Historic Nomination</div>
+            <div class="card-meta">CNN · NABJ Award Winner</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://youtu.be/mGfC92cdX1Y','_blank')">
+          <div class="card-thumb">
+            <img src="https://img.youtube.com/vi/mGfC92cdX1Y/hqdefault.jpg" alt="Talent Reel" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Hosting & Talent</span>
+            <div class="card-title">Trinity Alana — Talent Reel 2025</div>
+            <div class="card-meta">On-Camera · Host · Personality</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="showPageAndScroll('work','content')">
+          <div class="card-thumb">
+            <img src="social-headshot.jpg" alt="Content Creation" style="object-position:center top;" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Content</span>
+            <div class="card-title">@thetrinityalana — Content & Brand Partnerships</div>
+            <div class="card-meta">15.5K Followers · 103K+ Monthly Impressions</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">From Take Notes</span>
+        <button class="see-all" onclick="showPage('blog')">Read all →</button>
+      </div>
+      <div class="placeholder-zone">
+        <i class="ti ti-pencil"></i>
+        <div class="ph-title">Coming soon to Take Notes</div>
+        <p class="ph-sub">Your essays, podcast episodes, and journalism will appear here once published. Head to the Take Notes page to get started.</p>
+        <button class="btn-blue" onclick="showPage('blog')" style="margin-top:8px;">Go to Take Notes</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Trinity <span>Alana</span></div>
+          <p class="footer-tagline">Journalist. Host. Creative Director. Founder of Notoriety Creative Agency. Washington, D.C.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <span class="footer-col-title">Navigate</span>
+            <button class="footer-col-link" onclick="showPage('about')">About</button>
+            <button class="footer-col-link" onclick="showPage('work')">Work</button>
+            <button class="footer-col-link" onclick="showPage('notoriety')">Notoriety</button>
+            <button class="footer-col-link" onclick="showPage('blog')">Take Notes</button>
+            <button class="footer-col-link" onclick="showPage('booking')">Book Me</button>
+          </div>
+          <div>
+            <span class="footer-col-title">Contact</span>
+            <a class="footer-col-link" href="mailto:trinitykinslow@gmail.com">trinitykinslow@gmail.com</a>
+            <a class="footer-col-link" href="https://instagram.com" target="_blank">Instagram</a>
+            <a class="footer-col-link" href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Work with Notoriety</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Trinity Alana. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <div id="page-about" class="page">
+    <div class="section">
+      <span class="eyebrow">About Trinity</span>
+      <div class="about-layout">
+        <div>
+          <div class="about-photo">
+            <img src="about-headshot.jpg" alt="Trinity Alana" />
+          </div>
+        </div>
+        <div class="about-body">
+          <h2>Journalist.<br>Creative.<br>Visionary.</h2>
+          <p>My reporting background spans policy, civic organizing, celebrity news, and activism. At Howard University, I covered DC street vending legislation, federal underrepresentation, and student activism — stories that required translating bureaucratic processes for audiences directly impacted by their outcomes. My 2024 Democratic National Convention coverage, recognized with an NABJ Undergraduate Short Form Award, sharpened my ability to report on high-stakes political moments with clarity, speed, and cultural nuance. I've produced and reported at Broccoli City Festival, Blavity Festival, CultureCon, and AfroTech — events that don't just reflect culture, but set it.</p>
+          <p>At CNN, I have worked inside one of the world's largest newsrooms, adapting breaking news in real time, collaborating across editorial teams, and understanding how decisions get made at an institutional scale. This experience has sharpened my ability to move quickly without sacrificing accuracy. I'm equally comfortable on teleprompter and off-script, thriving in same-day production environments. I am a Howard University alumna, NABJ award recipient, and Student Emmy winner with credits across Blavity, CultureCon, and CNN — bringing the same community-centered rigor to every story I tell.</p>
+          <div class="award-list">
+            <div class="award-chip">
+              <i class="ti ti-award"></i>
+              <div><div class="award-name">Student Emmy Award</div><div class="award-sub">Howard University News Service · 2024</div></div>
+            </div>
+            <div class="award-chip">
+              <i class="ti ti-award"></i>
+              <div><div class="award-name">NABJ Award — Undergraduate Short Form</div><div class="award-sub">National Association of Black Journalists · 2025</div></div>
+            </div>
+            <div class="award-chip">
+              <i class="ti ti-school"></i>
+              <div><div class="award-name">Howard University</div><div class="award-sub">BA, Broadcast & Digital Journalism · GPA 3.6</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="section-label">Experience</span>
+      <div class="cards-3">
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Current · 2025–Present</span>
+            <div class="card-title">News Associate — CNN</div>
+            <div class="card-meta">Warner Bros. Discovery · Washington, D.C.</div>
+            <p class="card-desc">Manages internal communications and supports news gathering teams with reporting, research, and logging. Pitches segment ideas and coordinates graphics for flagship shows including The Lead, Inside Politics, and The Source.</p>
+          </div>
+        </div>
+
+        <div class="card notoriety-card">
+          <div class="card-body">
+            <span class="card-tag">Founder · 2023–Present</span>
+            <div class="card-title">Notoriety Creative Agency</div>
+            <div class="card-meta">DMV Area</div>
+            <p class="card-desc">Boutique creative agency connecting DMV artists and creatives with brand partnerships, events, and strategic visibility. Produces campaigns and content that create real community connection.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Fellowship · Jun–Oct 2025</span>
+            <div class="card-title">Blavity Creator Collective Fellow</div>
+            <div class="card-meta">Blavity, INC.</div>
+            <p class="card-desc">Produced content for Blavity's Black Outside series, reaching over 775,000 viewers across platforms. Increased Blavity social media engagement by 12%, amassing over 30,000 views in 3 months.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Host · October 2025</span>
+            <div class="card-title">AfroTech Event Host</div>
+            <div class="card-meta">Blavity, INC. · Houston, TX</div>
+            <p class="card-desc">Hosted live conversations and on-camera segments at AfroTech for a crowd of over 1,000 attendees, discussing innovation, entrepreneurship, and culture.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Internship · Feb–Aug 2024</span>
+            <div class="card-title">CJD Communications Intern</div>
+            <div class="card-meta">Center for Journalism & Democracy · Washington, D.C.</div>
+            <p class="card-desc">Created striking social media content and newsletter assets for an audience of over 1,000 followers, increasing social media engagement by 15%.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Radio · Jun 2022–May 2023</span>
+            <div class="card-title">Host & Producer — Streetz 99.3</div>
+            <div class="card-meta">Nashville, TN</div>
+            <p class="card-desc">Produced 7 artist interviews aired to an audience of over 12,000 listeners. Created promotional radio commercials and graphics to market each episode.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <span class="card-tag">Workshop · June 2024</span>
+            <div class="card-title">Marcus Graham Project MVP</div>
+            <div class="card-meta">Washington Wizards · Fanatics · Moët Hennessy</div>
+            <p class="card-desc">Participated in a 4-day marketing workshop in partnership with the Washington Wizards, Fanatics, and Moët Hennessy. Named Most Valuable Player for showcasing tenacity, leadership, and innovation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div><div class="footer-brand">Trinity <span>Alana</span></div><p class="footer-tagline">Journalist. Host. Creative Director. Washington, D.C.</p></div>
+        <div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('work')">Work</button><button class="footer-col-link" onclick="showPage('booking')">Book Me</button></div></div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana. All rights reserved.</span></div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ WORK ═══════════════ -->
+  <div id="page-work" class="page">
+
+    <div class="section" style="border-bottom:none;padding-bottom:16px;">
+      <span class="eyebrow">Portfolio</span>
+      <div class="page-title">Work</div>
+    </div>
+
+    <!-- ── 3-BOX INTRO HEADER ── -->
+    <div class="work-intro-boxes">
+
+      <div class="work-intro-box" onclick="window.open('https://youtu.be/mGfC92cdX1Y','_blank')">
+        <img src="talent-cover.jpg" alt="Talent Reel" />
+        <div class="work-intro-overlay">
+          <div class="work-intro-label">Hosting & Talent</div>
+          <div class="work-intro-title">Talent Reel 2025</div>
+        </div>
+      </div>
+
+      <div class="work-intro-box" onclick="showPageAndScroll('work','content')">
+        <img src="social-headshot.jpg" alt="Content Creation" style="object-position:center top;" />
+        <div class="work-intro-overlay">
+          <div class="work-intro-label">@thetrinityalana</div>
+          <div class="work-intro-title">Content & Brand Partnerships</div>
+        </div>
+      </div>
+
+      <div class="work-intro-box" onclick="showPageAndScroll('work','cnn')">
+        <!-- CNN box: replace below img tag with <img src="your-cnn-cover.jpg"> once you have a JPG version of IMG_8558 -->
+        <div class="work-intro-placeholder"><i class="ti ti-photo"></i></div>
+        <div class="work-intro-overlay">
+          <div class="work-intro-label">CNN</div>
+          <div class="work-intro-title">My Work at CNN</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════ SECTION 1: CNN ══════ -->
+    <div id="cnn" class="section cnn-featured" style="padding-top:40px;">
+
+      <div class="cnn-featured-header">
+        <span class="cnn-logo-badge">CNN</span>
+        <div>
+          <div class="cnn-featured-title">My Work at CNN</div>
+          <p class="cnn-featured-desc">Television segments, digital videos, and stories produced as a News Associate at Warner Bros. Discovery / CNN, Washington D.C.</p>
+        </div>
+      </div>
+
+      <!-- TV Segments Produced -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Television Segments Produced</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <video controls preload="metadata" style="width:100%;height:100%;object-fit:cover;">
+                <source src="serena-segment.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Sports Segment · Producer</span>
+              <div class="cnn-card-title">Serena Williams Returns to Tennis</div>
+              <p class="cnn-card-desc">The G.O.A.T Returns! I was able to pitch, write, and produce this segment for The Lead with Jake Tapper during my time as a News Associate on their team.</p>
+            </div>
+          </div>
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Tech Segment · Associate Producer</span>
+              <div class="cnn-card-title">Amazon's Ring Sued Over A.I. Facial Recognition Feature</div>
+              <p class="cnn-card-desc">"We don't believe that it has merit. We comply with all of the privacy laws where they exist." I pitched and wrote this television interview with Ring founder Jamie Siminoff as he responded to a lawsuit filed over Ring's A.I. facial recognition feature. The segment was produced for CNN's The Lead with Jake Tapper as Phil Mattingly as the fill-in anchor.</p>
+              <a class="cnn-card-link" href="https://www.instagram.com/p/DZV_3A1gbLE/" target="_blank">Watch ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Digital Videos Produced -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Digital Videos Produced</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Social Video · Producer</span>
+              <div class="cnn-card-title">Introducing New Features</div>
+              <p class="cnn-card-desc">I brought my social media knowledge to the newsroom, introducing new META features to promote interviews posted on @theleadcnn.</p>
+              <a class="cnn-card-link" href="https://www.instagram.com/reels/DZqhV_bg_LU/" target="_blank">Watch ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Stories Written & Contributed To -->
+      <div class="cnn-subsection">
+        <div class="cnn-subsection-label">Stories Written &amp; Contributed To</div>
+        <div class="cnn-cards">
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Politics · Reporting · 2026</span>
+              <div class="cnn-card-title">GOP Rep. Mike Lawler blasts 'disgusting' antisemitic and homophobic comments from Sen. Rand Paul's son</div>
+              <a class="cnn-card-link" href="https://www.cnn.com/2026/05/13/politics/mike-lawler-rand-paul-son" target="_blank">Read on CNN ↗</a>
+            </div>
+          </div>
+
+          <div class="cnn-card">
+            <div class="cnn-card-cover">
+              <i class="ti ti-photo"></i>
+              <span>Add cover photo</span>
+            </div>
+            <div class="cnn-card-body">
+              <span class="cnn-card-type">Politics · Live News · 2025</span>
+              <div class="cnn-card-title">Trump repeats stance that Russia and Ukraine should accept current battle lines</div>
+              <a class="cnn-card-link" href="https://www.cnn.com/politics/live-news/trump-government-shutdown-news-10-19-25" target="_blank">Read on CNN ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DNC Section -->
+      <div id="dnc" class="dnc-section">
+        <div class="dnc-badge">
+          <i class="ti ti-award" style="font-size:14px;color:var(--blue);"></i>
+          <span class="dnc-badge-text">NABJ Award Winner · CNN Coverage</span>
+        </div>
+        <div class="dnc-title">2024 Democratic National Convention — Kamala Harris' Historic Nomination</div>
+        <div class="dnc-meta">CNN / Howard University · Chicago, IL · August 2024</div>
+
+        <!-- DNC Video Carousel -->
+        <div class="video-carousel-outer" style="margin-top:20px;">
+          <div class="video-carousel-track" style="animation-duration:40s;">
+
+            <!-- Video 1 -->
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'sxhpNTJiDRk')">
+                <img src="https://img.youtube.com/vi/sxhpNTJiDRk/hqdefault.jpg" alt="DNC Segment 1" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 1</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'M1U_8vEyTaA')">
+                <img src="https://img.youtube.com/vi/M1U_8vEyTaA/hqdefault.jpg" alt="DNC Segment 2" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 2</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+
+            <!-- Video 3 — NABJ Award Winner -->
+            <div class="vid-card" style="width:320px;position:relative;">
+              <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1A5FA8;color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:40px;display:flex;align-items:center;gap:5px;white-space:nowrap;z-index:3;">
+                <i class="ti ti-crown" style="font-size:12px;color:#FFD700;"></i> NABJ AWARD WINNER
+              </div>
+              <div class="vid-thumb" onclick="playYouTube(this,'j58i8MqJjOs')" style="margin-top:14px;">
+                <img src="https://img.youtube.com/vi/j58i8MqJjOs/hqdefault.jpg" alt="DNC Segment 3 - NABJ Winner" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info">
+                <div class="vid-title">DNC Coverage — Segment 3</div>
+                <div class="vid-date">CNN · August 2024</div>
+                <div style="font-size:11px;color:var(--blue);font-weight:500;margin-top:4px;">🏆 NABJ Undergraduate Short Form Award</div>
+              </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'nT8_6KNvmis')">
+                <img src="https://img.youtube.com/vi/nT8_6KNvmis/hqdefault.jpg" alt="DNC Segment 4" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 4</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+
+            <!-- Video 5 — NABJ Award Winner -->
+            <div class="vid-card" style="width:320px;position:relative;">
+              <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1A5FA8;color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:40px;display:flex;align-items:center;gap:5px;white-space:nowrap;z-index:3;">
+                <i class="ti ti-crown" style="font-size:12px;color:#FFD700;"></i> NABJ AWARD WINNER
+              </div>
+              <div class="vid-thumb" onclick="playYouTube(this,'khXH0EO9sC4')" style="margin-top:14px;">
+                <img src="https://img.youtube.com/vi/khXH0EO9sC4/hqdefault.jpg" alt="DNC Segment 5 - NABJ Winner" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info">
+                <div class="vid-title">DNC Coverage — Segment 5</div>
+                <div class="vid-date">CNN · August 2024</div>
+                <div style="font-size:11px;color:var(--blue);font-weight:500;margin-top:4px;">🏆 NABJ Undergraduate Short Form Award</div>
+              </div>
+            </div>
+
+            <!-- DUPLICATE SET for seamless loop -->
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'sxhpNTJiDRk')">
+                <img src="https://img.youtube.com/vi/sxhpNTJiDRk/hqdefault.jpg" alt="DNC Segment 1" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 1</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'M1U_8vEyTaA')">
+                <img src="https://img.youtube.com/vi/M1U_8vEyTaA/hqdefault.jpg" alt="DNC Segment 2" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 2</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+            <div class="vid-card" style="width:320px;position:relative;">
+              <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1A5FA8;color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:40px;display:flex;align-items:center;gap:5px;white-space:nowrap;z-index:3;">
+                <i class="ti ti-crown" style="font-size:12px;color:#FFD700;"></i> NABJ AWARD WINNER
+              </div>
+              <div class="vid-thumb" onclick="playYouTube(this,'j58i8MqJjOs')" style="margin-top:14px;">
+                <img src="https://img.youtube.com/vi/j58i8MqJjOs/hqdefault.jpg" alt="DNC Segment 3" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 3</div><div class="vid-date">CNN · August 2024</div><div style="font-size:11px;color:var(--blue);font-weight:500;margin-top:4px;">🏆 NABJ Undergraduate Short Form Award</div></div>
+            </div>
+            <div class="vid-card" style="width:320px;">
+              <div class="vid-thumb" onclick="playYouTube(this,'nT8_6KNvmis')">
+                <img src="https://img.youtube.com/vi/nT8_6KNvmis/hqdefault.jpg" alt="DNC Segment 4" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 4</div><div class="vid-date">CNN · August 2024</div></div>
+            </div>
+            <div class="vid-card" style="width:320px;position:relative;">
+              <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1A5FA8;color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:40px;display:flex;align-items:center;gap:5px;white-space:nowrap;z-index:3;">
+                <i class="ti ti-crown" style="font-size:12px;color:#FFD700;"></i> NABJ AWARD WINNER
+              </div>
+              <div class="vid-thumb" onclick="playYouTube(this,'khXH0EO9sC4')" style="margin-top:14px;">
+                <img src="https://img.youtube.com/vi/khXH0EO9sC4/hqdefault.jpg" alt="DNC Segment 5" />
+                <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+              </div>
+              <div class="vid-info"><div class="vid-title">DNC Coverage — Segment 5</div><div class="vid-date">CNN · August 2024</div><div style="font-size:11px;color:var(--blue);font-weight:500;margin-top:4px;">🏆 NABJ Undergraduate Short Form Award</div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════ SECTION 2: DIGITAL REPORTING ══════ -->
+    <div class="section" style="padding-bottom:48px;">
+      <span class="eyebrow">Portfolio</span>
+      <div class="page-title" style="font-size:36px;margin-bottom:28px;">Digital Reporting</div>
+      <div class="video-carousel-outer">
+        <div class="video-carousel-track">
+
+          <!-- YouTube: Spotlighting Designer, Danielle Glace -->
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'dXYvysTVC5A')">
+              <img src="https://img.youtube.com/vi/dXYvysTVC5A/hqdefault.jpg" alt="Spotlighting Designer, Danielle Glace" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">Spotlighting Designer, Danielle Glace</div>
+              <div class="vid-date">Howard University News Service</div>
+            </div>
+          </div>
+
+          <!-- YouTube: New Street Vending Legislation in DC -->
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'00r3BBBQY1k')">
+              <img src="https://img.youtube.com/vi/00r3BBBQY1k/hqdefault.jpg" alt="New Street Vending Legislation in DC" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">New Street Vending Legislation in DC</div>
+              <div class="vid-date">Reporter & Producer</div>
+            </div>
+          </div>
+
+          <!-- YouTube: National Museum of Women in the Arts -->
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'1y8YnUMOMm4')">
+              <img src="https://img.youtube.com/vi/1y8YnUMOMm4/hqdefault.jpg" alt="NMWA Nights" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">National Museum of Women in the Arts Hosts First NMWA Nights Since Grand Reopening</div>
+              <div class="vid-date">Reporter</div>
+            </div>
+          </div>
+
+          <!-- YouTube: Student Activism and Gen Z Voters -->
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'kOFAVjwh0Hk')">
+              <img src="https://img.youtube.com/vi/kOFAVjwh0Hk/hqdefault.jpg" alt="Student Activism and Gen Z Voters" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">Student Activism and Gen Z Voters</div>
+              <div class="vid-date">Reporter & Producer</div>
+            </div>
+          </div>
+
+          <!-- Instagram: Imani Ellis at CultureCon -->
+          <div class="vid-card">
+            <a href="https://www.instagram.com/reel/DYh5VHxJ7Sr/" target="_blank" style="text-decoration:none;">
+              <div class="vid-thumb" style="background:#1a1a1a;">
+                <div class="vid-play-btn" style="flex-direction:column;gap:8px;">
+                  <i class="ti ti-brand-instagram" style="font-size:32px;color:white;"></i>
+                  <span style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;">Watch Reel</span>
+                </div>
+              </div>
+            </a>
+            <div class="vid-info">
+              <div class="vid-title">Imani Ellis at CultureCon Cafe DC</div>
+              <div class="vid-date">On-Camera · Culture Coverage</div>
+            </div>
+          </div>
+
+          <!-- Instagram: Pierre Edwards -->
+          <div class="vid-card">
+            <a href="https://www.instagram.com/reel/DX12NeJxM6o/" target="_blank" style="text-decoration:none;">
+              <div class="vid-thumb" style="background:#1a1a1a;">
+                <div class="vid-play-btn" style="flex-direction:column;gap:8px;">
+                  <i class="ti ti-brand-instagram" style="font-size:32px;color:white;"></i>
+                  <span style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;">Watch Reel</span>
+                </div>
+              </div>
+            </a>
+            <div class="vid-info">
+              <div class="vid-title">Pierre Edwards and DJ Money "Where The Light Falls Exhibit"</div>
+              <div class="vid-date">On-Camera · Arts Coverage</div>
+            </div>
+          </div>
+
+          <!-- Instagram: Culture Con 2024 -->
+          <div class="vid-card">
+            <a href="https://www.instagram.com/reel/DBHisurSPTJ/" target="_blank" style="text-decoration:none;">
+              <div class="vid-thumb" style="background:#1a1a1a;">
+                <div class="vid-play-btn" style="flex-direction:column;gap:8px;">
+                  <i class="ti ti-brand-instagram" style="font-size:32px;color:white;"></i>
+                  <span style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;">Watch Reel</span>
+                </div>
+              </div>
+            </a>
+            <div class="vid-info">
+              <div class="vid-title">Culture Con 2024</div>
+              <div class="vid-date">Event Coverage</div>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET for seamless loop -->
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'dXYvysTVC5A')">
+              <img src="https://img.youtube.com/vi/dXYvysTVC5A/hqdefault.jpg" alt="Spotlighting Designer, Danielle Glace" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">Spotlighting Designer, Danielle Glace</div>
+              <div class="vid-date">Howard University News Service</div>
+            </div>
+          </div>
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'00r3BBBQY1k')">
+              <img src="https://img.youtube.com/vi/00r3BBBQY1k/hqdefault.jpg" alt="New Street Vending Legislation" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">New Street Vending Legislation in DC</div>
+              <div class="vid-date">Reporter & Producer</div>
+            </div>
+          </div>
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'1y8YnUMOMm4')">
+              <img src="https://img.youtube.com/vi/1y8YnUMOMm4/hqdefault.jpg" alt="NMWA Nights" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">NMWA Nights Since Grand Reopening</div>
+              <div class="vid-date">Reporter</div>
+            </div>
+          </div>
+          <div class="vid-card">
+            <div class="vid-thumb" onclick="playYouTube(this,'kOFAVjwh0Hk')">
+              <img src="https://img.youtube.com/vi/kOFAVjwh0Hk/hqdefault.jpg" alt="Student Activism" />
+              <div class="vid-play-btn"><i class="ti ti-player-play-filled"></i></div>
+            </div>
+            <div class="vid-info">
+              <div class="vid-title">Student Activism and Gen Z Voters</div>
+              <div class="vid-date">Reporter & Producer</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ SECTION 3: CONTENT ══════ -->
+    <div id="content" class="section" style="padding-bottom:48px;">
+      <div class="content-header">
+        <div class="content-handle"><strong>@thetrinityalana</strong> on all platforms</div>
+        <div class="content-platform">Content creator · Brand partner · Social strategist</div>
+        <div class="content-stats">
+          <div class="content-stat">
+            <i class="ti ti-users"></i>
+            <div class="content-stat-num">15.5K</div>
+            <div class="content-stat-label">Followers across Instagram & TikTok</div>
+          </div>
+          <div class="content-stat">
+            <i class="ti ti-heart"></i>
+            <div class="content-stat-num">5.3K</div>
+            <div class="content-stat-label">Avg. Engagement Per Post</div>
+          </div>
+          <div class="content-stat">
+            <i class="ti ti-eye"></i>
+            <div class="content-stat-num">103K+</div>
+            <div class="content-stat-label">Monthly Impressions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-scroll-wrap">
+        <div class="brand-scroll-track">
+          <span class="brand-logo-text">Savage x Fenty</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Black Enterprise</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Google</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Stript</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">MARS</span>
+          <span class="brand-logo-text">·</span>
+          <!-- duplicate -->
+          <span class="brand-logo-text">Savage x Fenty</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Black Enterprise</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Google</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">Stript</span>
+          <span class="brand-logo-text">·</span>
+          <span class="brand-logo-text">MARS</span>
+          <span class="brand-logo-text">·</span>
+        </div>
+      </div>
+
+      <div class="service-reel-grid">
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DRDNvr2koOQ/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Branded Content</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DWRiGOokT6R/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">UGC / Product Placement</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DYh5VHxJ7Sr/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Event Coverage</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DV_74k2idrR/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Brand Ambassadorship</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DV1yDS9kirq/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">MOS Interviews</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DUHGUo9gH1i/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Experiential Partnerships</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DKiVmPNSf8S/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Event Coverage</div>
+        </a>
+
+        <a class="service-reel-card" href="https://www.instagram.com/reel/DVeKl5OjdcX/" target="_blank">
+          <div class="service-reel-thumb">
+            <div class="service-reel-play"><i class="ti ti-brand-instagram"></i></div>
+          </div>
+          <div class="service-reel-label">Event Promotion</div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center;padding-top:8px;">
+        <button class="btn-blue" onclick="showPage('booking')">Book Me</button>
+      </div>
+    </div>
+
+    <!-- ══════ SECTION 4: ADDITIONAL PROJECTS ══════ -->
+    <div class="section" style="padding-bottom:60px;">
+      <span class="eyebrow">More Work</span>
+      <div class="page-title" style="font-size:36px;margin-bottom:28px;">Additional Projects</div>
+
+      <div class="projects-grid">
+
+        <!-- Block 1: 1619 Podcast -->
+        <a class="proj-card proj-card-link" href="https://newsroom.spotify.com/2024-04-17/nextgen-partners-with-howard-university-professor-nikole-hannah-jones-on-student-podcasting-course/" target="_blank">
+          <div class="proj-thumb"><i class="ti ti-microphone-2"></i></div>
+          <div class="proj-body">
+            <span class="proj-tag">Podcast · Writer</span>
+            <div class="proj-title">1619: The College Edition — Queer Seminar</div>
+            <div class="proj-btns">
+              <span class="proj-btn">Listen on Spotify ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Block 2: Take Notes Live -->
+        <a class="proj-card proj-card-link" href="https://www.youtube.com/watch?v=RD_EF2Ifc_k" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://img.youtube.com/vi/RD_EF2Ifc_k/hqdefault.jpg" alt="Take Notes Live" />
+          </div>
+          <div class="proj-body">
+            <span class="proj-tag">Host · Executive Producer</span>
+            <div class="proj-title">Take Notes Live: A Convo on Civic Engagement w/ Jawanna Hardy, Will Grandberry & Jamal Holtz</div>
+            <div class="proj-btns">
+              <span class="proj-btn">Watch on YouTube ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Block 3: Blavity Creator Collective -->
+        <div class="proj-card">
+          <div class="proj-thumb"><i class="ti ti-video"></i></div>
+          <div class="proj-body">
+            <span class="proj-tag">Fellowship · Content Creation</span>
+            <div class="proj-title">Blavity Creator Collective</div>
+            <div class="proj-btns">
+              <a class="proj-btn" href="https://www.instagram.com/reel/DMyA1prNKzu/" target="_blank">Shy Glizzy Exhibit in DC ↗</a>
+              <a class="proj-btn" href="https://www.instagram.com/reel/DNEQLP3KrR5/" target="_blank">Nashville Black Owned Fitness Center ↗</a>
+              <a class="proj-btn" href="https://www.instagram.com/reel/DNqqP42xwuM/" target="_blank">Wine and Slow Jams DMV ↗</a>
+              <a class="proj-btn" href="https://www.instagram.com/reel/DQFQ50VDWOf/" target="_blank">Howard vs Morehouse ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 4: Artists N Da Streetz -->
+        <div class="proj-card">
+          <div class="proj-thumb"><i class="ti ti-radio"></i></div>
+          <div class="proj-body">
+            <span class="proj-tag">Host · Producer · Marketing</span>
+            <div class="proj-title">Artists N Da Streetz — Streetz 99.3</div>
+            <div class="proj-btns">
+              <a class="proj-btn" href="https://youtu.be/ONcVsJ3uZU4" target="_blank">Bella Moon (2023) ↗</a>
+              <a class="proj-btn" href="https://youtu.be/UMubk0Qcx2c" target="_blank">Chuck IndiGO (2023) ↗</a>
+              <a class="proj-btn" href="https://youtu.be/UBFTQH6bDN8" target="_blank">iNTRO (2023) ↗</a>
+              <a class="proj-btn" href="https://youtu.be/ofTt5crmZDA" target="_blank">Dimestate Don (2023) ↗</a>
+              <a class="proj-btn" href="https://youtu.be/f1WGD07UzOQ" target="_blank">Nikki Jay (2024) ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 5: AfroTech Hosting -->
+        <a class="proj-card proj-card-link" href="https://lnkd.in/p/egf_ZwBy" target="_blank">
+          <div class="proj-thumb"><i class="ti ti-microphone-2"></i></div>
+          <div class="proj-body">
+            <span class="proj-tag">Host · October 2025</span>
+            <div class="proj-title">AfroTech Hosting</div>
+            <div class="proj-btns">
+              <span class="proj-btn">View on LinkedIn ↗</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div><div class="footer-brand">Trinity <span>Alana</span></div><p class="footer-tagline">© 2026 Trinity Alana. All rights reserved.</p></div>
+        <div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('booking')">Book Me</button></div></div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana.</span></div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ NOTORIETY ═══════════════ -->
+  <div id="page-notoriety" class="page">
+
+    <div class="not-hero">
+      <div class="not-hero-inner">
+        <span class="eyebrow-blue">Notoriety Creative Agency</span>
+        <h1>Where creativity meets strategy in the DMV.</h1>
+        <p>A boutique creative agency connecting artists, influencers, and multi-disciplinary creatives with brand partnerships, events, and strategic visibility.</p>
+        <div class="not-hero-btns">
+          <a class="btn-outline-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Brand Intake Form ↗</a>
+          <button class="btn-white-outline" onclick="showPage('booking')">Book Trinity</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-bottom:0;border-bottom:none;">
+      <div class="section-header" style="margin-bottom:8px;">
+        <span class="section-label" style="margin-bottom:0;">Services</span>
+        <span style="font-size:12px;color:var(--muted);">Each service links to our brand intake form</span>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:20px;">
+      <div class="services-grid">
+        <a class="service-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+          <i class="ti ti-brand-instagram service-icon"></i>
+          <div class="service-name">Social Media Management</div>
+          <p class="service-desc">Full-service social management including content calendars, community engagement, platform strategy, and monthly analytics reporting.</p>
+          <span class="service-cta">Inquire →</span>
+        </a>
+        <a class="service-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+          <i class="ti ti-calendar-event service-icon"></i>
+          <div class="service-name">Event Production</div>
+          <p class="service-desc">Concept through execution — brand activations, cultural events, community mixers, and immersive experiences in the DMV and beyond.</p>
+          <span class="service-cta">Inquire →</span>
+        </a>
+        <a class="service-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+          <i class="ti ti-chart-bar service-icon"></i>
+          <div class="service-name">Social & Digital Strategy</div>
+          <p class="service-desc">Audience growth strategy, platform audits, influencer pipeline development, and brand positioning for cultural relevance.</p>
+          <span class="service-cta">Inquire →</span>
+        </a>
+        <a class="service-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">
+          <i class="ti ti-video service-icon"></i>
+          <div class="service-name">Video Production</div>
+          <p class="service-desc">Branded content, social video, and editorial production — scripted and unscripted — for brands, creatives, and agency clients.</p>
+          <span class="service-cta">Inquire →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Case Studies</span>
+        <span style="font-size:12px;color:var(--muted);">Add as many as you need</span>
+      </div>
+      <div class="case-grid">
+        <div class="card">
+          <div class="card-thumb"><i class="ti ti-shirt"></i></div>
+          <div class="card-body">
+            <span class="card-tag">Client · Fashion</span>
+            <div class="card-title">Eight2Eight LLC — Brand Ambassador Program</div>
+            <div class="card-meta">Women's workwear · DMV</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-thumb"><i class="ti ti-device-mobile"></i></div>
+          <div class="card-body">
+            <span class="card-tag">Social Series</span>
+            <div class="card-title">The MoodBoard</div>
+            <div class="card-meta">Notoriety original social series</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-thumb"><i class="ti ti-trophy"></i></div>
+          <div class="card-body">
+            <span class="card-tag">Workshop · Sports Marketing</span>
+            <div class="card-title">Marcus Graham Project — MVP</div>
+            <div class="card-meta">Wizards, Fanatics, Moët Hennessy</div>
+          </div>
+        </div>
+        <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
+        <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
+        <div class="add-card"><i class="ti ti-plus"></i><span>Add case study</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Client Testimonials</span>
+        <span style="font-size:12px;color:var(--muted);">Add client quotes below</span>
+      </div>
+      <div class="placeholder-zone">
+        <i class="ti ti-quote"></i>
+        <div class="ph-title">Testimonials coming soon</div>
+        <p class="ph-sub">Add client quotes here. Each testimonial card takes a quote, client name, title, and company.</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Notoriety <span>Creative</span></div>
+          <p class="footer-tagline">A Trinity Alana Company · Washington, D.C.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <span class="footer-col-title">Services</span>
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social Media Management</a>
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Event Production</a>
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Social & Digital Strategy</a>
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Video Production</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copy">© 2026 Notoriety Creative Agency. All rights reserved.</span></div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ TAKE NOTES ═══════════════ -->
+  <div id="page-blog" class="page">
+    <div class="section" style="border-bottom:none;padding-bottom:20px;">
+      <span class="eyebrow">Trinity Alana</span>
+      <div class="page-title">Take Notes</div>
+      <p style="font-size:15px;color:var(--muted);max-width:520px;line-height:1.7;margin-top:8px;">Essays, reported journalism, podcast episodes, and multimedia projects — owned here, on my terms.</p>
+    </div>
+
+    <div class="section" style="padding-top:32px;">
+      <div class="blog-cats">
+        <button class="blog-cat active" onclick="filterBlog(this,'all')">All</button>
+        <button class="blog-cat" onclick="filterBlog(this,'essay')">Essays</button>
+        <button class="blog-cat" onclick="filterBlog(this,'podcast')">Podcast</button>
+        <button class="blog-cat" onclick="filterBlog(this,'journalism')">Journalism</button>
+        <button class="blog-cat" onclick="filterBlog(this,'substack')">Substack</button>
+      </div>
+
+      <div id="blog-empty" class="placeholder-zone">
+        <i class="ti ti-pencil"></i>
+        <div class="ph-title">Nothing published yet — but that changes soon.</div>
+        <p class="ph-sub">Your essays, podcast episodes, Substack pieces, and journalism will live here.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;">
+        <div class="add-card"><i class="ti ti-notes"></i><span>Add essay</span></div>
+        <div class="add-card"><i class="ti ti-headphones"></i><span>Add podcast episode</span></div>
+        <div class="add-card"><i class="ti ti-article"></i><span>Add journalism piece</span></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div><div class="footer-brand">Take <span>Notes</span></div><p class="footer-tagline">By Trinity Alana · © 2026</p></div>
+        <div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('booking')">Book Me</button></div></div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana. All rights reserved.</span></div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ BOOKING ═══════════════ -->
+  <div id="page-booking" class="page">
+    <div class="section" style="border-bottom:none;padding-bottom:16px;">
+      <span class="eyebrow">Work with me</span>
+      <div class="page-title">Book Trinity</div>
+      <p style="font-size:15px;color:var(--muted);margin-top:6px;">Select a service and send an inquiry. I respond within 48 hours.</p>
+    </div>
+
+    <div class="section" style="padding-top:28px;">
+      <div class="booking-layout">
+        <div class="booking-types">
+          <button class="booking-type sel" onclick="selectType(this,'Branded Content')">
+            <div class="bt-name">Branded Content</div>
+            <p class="bt-desc">Scripted videos, UGC ads, social campaigns, and editorial content for your brand.</p>
+          </button>
+          <button class="booking-type" onclick="selectType(this,'Interview / On-Camera Talent')">
+            <div class="bt-name">Interview / On-Camera Talent</div>
+            <p class="bt-desc">Red carpet, editorial, and video interviews hosted by Trinity.</p>
+          </button>
+          <button class="booking-type" onclick="selectType(this,'Event Hosting')">
+            <div class="bt-name">Event Hosting</div>
+            <p class="bt-desc">Live event MC, panel moderation, and brand activations in-person or virtual.</p>
+          </button>
+          <button class="booking-type" onclick="selectType(this,'Social Content Creation')">
+            <div class="bt-name">Social Content Creation</div>
+            <p class="bt-desc">Monthly content packages for Instagram, TikTok, and YouTube.</p>
+          </button>
+          <div class="agency-nudge">
+            <span class="agency-nudge-label">Notoriety Creative Agency</span>
+            <p class="agency-nudge-text">Looking for brand partnerships, social media management, event production, or video production? Use our brand intake form.</p>
+            <a class="btn-outline-blue" style="font-size:11px;padding:8px 16px;" href="https://docs.google.com/forms/d/e/1FAIpQLSfP7obs1pqSiHoWIbDzcRGGMSJPpmiYHNu54U41RZsaAPcU2w/viewform" target="_blank">Brand Intake Form ↗</a>
+          </div>
+        </div>
+
+        <div class="booking-form-wrap">
+          <div class="form-title">Send an inquiry</div>
+          <div class="form-field">
+            <label class="form-label">Your name</label>
+            <input class="form-input" type="text" placeholder="First and last name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Service</label>
+            <select class="form-select" id="svc-select">
+              <option>Branded Content</option>
+              <option>Interview / On-Camera Talent</option>
+              <option>Event Hosting</option>
+              <option>Social Content Creation</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Brand / Company</label>
+            <input class="form-input" type="text" placeholder="Your brand or company name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Project details</label>
+            <textarea class="form-textarea" placeholder="Date, location, goals, budget range, and any relevant details..."></textarea>
+          </div>
+          <button class="submit-btn" onclick="handleSubmit()">Submit Inquiry →</button>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6;">By submitting you agree to be contacted by Trinity Alana regarding your inquiry. Response within 48 hours.</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-num">15.5K</div><div class="stat-label">Followers across platforms</div></div>
+        <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">National journalism awards</div></div>
+        <div class="stat-card"><div class="stat-num">CNN</div><div class="stat-label">Current home network</div></div>
+        <div class="stat-card"><div class="stat-num">HU</div><div class="stat-label">Howard University trained</div></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div><div class="footer-brand">Trinity <span>Alana</span></div><p class="footer-tagline">trinitykinslow@gmail.com · Washington, D.C.</p></div>
+        <div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('notoriety')">Notoriety</button></div></div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana. All rights reserved.</span></div>
+    </footer>
+  </div>
+
+  <script>
+    /* ─── PAGE NAVIGATION ─────────────────────────────────── */
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      const page = document.getElementById('page-' + id);
+      if (page) { page.classList.add('active'); window.scrollTo(0, 0); }
+      const map = { home: 0, about: 1, work: 2, notoriety: 3, blog: 4 };
+      const links = document.querySelectorAll('.nav-link');
+      if (map[id] !== undefined && links[map[id]]) links[map[id]].classList.add('active');
+    }
+
+    function showPageAndScroll(pageId, anchorId) {
+      showPage(pageId);
+      setTimeout(function() {
+        const el = document.getElementById(anchorId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+    }
+
+    /* ─── MOBILE MENU ─────────────────────────────────────── */
+    function toggleMobile() {
+      const m = document.getElementById('mobileMenu');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    /* ─── BOOKING TYPE SELECTOR ───────────────────────────── */
+    function selectType(el, val) {
+      document.querySelectorAll('.booking-type').forEach(b => b.classList.remove('sel'));
+      el.classList.add('sel');
+      const s = document.getElementById('svc-select');
+      if (s) s.value = val;
+    }
+
+    /* ─── BOOKING FORM SUBMIT ─────────────────────────────── */
+    function handleSubmit() {
+      const name = document.querySelector('.booking-form-wrap .form-input').value.trim();
+      const email = document.querySelectorAll('.booking-form-wrap .form-input')[1].value.trim();
+      if (!name || !email) {
+        alert('Please fill in your name and email before submitting.');
+        return;
+      }
+      const btn = document.querySelector('.submit-btn');
+      btn.textContent = '✓ Inquiry sent — I\'ll be in touch!';
+      btn.style.background = '#1a5fa8';
+      btn.disabled = true;
+    }
+
+    /* ─── BLOG CATEGORY FILTER ────────────────────────────── */
+    function filterBlog(btn, cat) {
+      document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cards = document.querySelectorAll('#blog-grid .blog-card');
+      cards.forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+      });
+    }
+
+    /* ─── YOUTUBE FACADE PLAYER ───────────────────────────── */
+    function playYouTube(thumbEl, videoId) {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+      iframe.allow = 'autoplay; encrypted-media; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'width:100%;height:100%;border:none;position:absolute;inset:0;';
+      thumbEl.innerHTML = '';
+      thumbEl.appendChild(iframe);
+    }
+  </script>
+
+</body>
+</html>
