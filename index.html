@@ -121,13 +121,21 @@
     .add-card:hover { border-color: var(--blue); }
     .add-card i { font-size: 22px; color: var(--muted); }
     .add-card span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-    /* Kit embed wrapper */
+    /* Kit email capture */
     .kit-section { padding: 56px 0 40px; border-top: 1px solid var(--border); }
-    .kit-section-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 20px; }
+    .kit-section-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
+    .kit-heading { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .kit-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .kit-form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 480px; }
+    .kit-form input { flex: 1; min-width: 200px; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; background: var(--white); color: var(--text); }
+    .kit-form input:focus { border-color: var(--text); }
+    .kit-form button { padding: 12px 24px; background: var(--black); color: var(--white); border: none; border-radius: var(--radius); font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
+    .kit-form button:hover { background: #222; }
+    .kit-success { font-size: 14px; color: #16a34a; margin-top: 12px; display: none; }
     /* Kit popup */
     #kit-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.65); z-index: 9999; align-items: center; justify-content: center; }
     #kit-popup-overlay.open { display: flex; }
-    #kit-popup-box { background: var(--white); border-radius: 16px; padding: 40px 36px 32px; max-width: 480px; width: 92%; position: relative; max-height: 90vh; overflow-y: auto; }
+    #kit-popup-box { background: var(--white); border-radius: 16px; padding: 44px 40px 36px; max-width: 460px; width: 92%; position: relative; }
     #kit-popup-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 22px; color: var(--muted); cursor: pointer; line-height: 1; }
     #kit-popup-close:hover { color: var(--text); }
 
@@ -474,8 +482,14 @@
     <div class="section-header"><span class="section-label">From Take Notes</span><button class="see-all" onclick="showPage('blog')">Read all →</button></div>
     <div class="placeholder-zone"><i class="ti ti-pencil"></i><div class="ph-title">Coming soon to Take Notes</div><p class="ph-sub">Your essays, podcast episodes, and journalism will appear here once published.</p><button class="btn-blue" onclick="showPage('blog')" style="margin-top:8px;">Go to Take Notes</button></div>
     <div class="kit-section">
-      <span class="kit-section-label">Stay in the loop</span>
-      <script async data-uid="ad2636b870" src="https://trinity-alana.kit.com/ad2636b870/index.js"></script>
+      <span class="kit-section-label">◆ The Trinity Alana</span>
+      <div class="kit-heading">Did you learn something new?<br>Let's keep that up.</div>
+      <p class="kit-sub">Keep the conversation going — stay up on news in art and culture.</p>
+      <form class="kit-form" onsubmit="kitSubscribe(event, this)">
+        <input type="email" name="email_address" placeholder="Your email address" required />
+        <button type="submit">Get Informed</button>
+      </form>
+      <p class="kit-success">You're in! Check your inbox.</p>
     </div>
   </div>
 
@@ -938,9 +952,15 @@
     <div class="placeholder-zone"><i class="ti ti-pencil"></i><div class="ph-title">Nothing published yet — but that changes soon.</div><p class="ph-sub">Your essays, podcast episodes, Substack pieces, and journalism will live here.</p></div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;"><div class="add-card"><i class="ti ti-notes"></i><span>Add essay</span></div><div class="add-card"><i class="ti ti-headphones"></i><span>Add podcast episode</span></div><div class="add-card"><i class="ti ti-article"></i><span>Add journalism piece</span></div></div>
   </div>
-  <div class="section kit-section" style="border-top:1px solid var(--border);">
-    <span class="kit-section-label">Enjoyed this? Keep learning.</span>
-    <script async data-uid="ad2636b870" src="https://trinity-alana.kit.com/ad2636b870/index.js"></script>
+  <div class="section kit-section">
+    <span class="kit-section-label">◆ The Trinity Alana</span>
+    <div class="kit-heading">Enjoyed this? Keep learning.</div>
+    <p class="kit-sub">Stay up on news in art and culture — straight from me.</p>
+    <form class="kit-form" onsubmit="kitSubscribe(event, this)">
+      <input type="email" name="email_address" placeholder="Your email address" required />
+      <button type="submit">Get Informed</button>
+    </form>
+    <p class="kit-success">You're in! Check your inbox.</p>
   </div>
   <footer class="footer"><div class="footer-top"><div><div class="footer-brand">Take <span>Notes</span></div><p class="footer-tagline">By Trinity Alana · © 2026</p></div><div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('booking')">Book Me</button></div></div></div><div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana.</span></div></footer>
 </div>
@@ -949,7 +969,14 @@
 <div id="kit-popup-overlay">
   <div id="kit-popup-box">
     <button id="kit-popup-close" onclick="document.getElementById('kit-popup-overlay').classList.remove('open')">×</button>
-    <iframe src="https://trinity-alana.kit.com/ad2636b870" style="width:100%;height:420px;border:none;border-radius:8px;" loading="lazy"></iframe>
+    <span class="kit-section-label" style="margin-bottom:10px;">◆ The Trinity Alana</span>
+    <div class="kit-heading">Did you learn something new?<br>Let's keep that up.</div>
+    <p class="kit-sub">Keep the conversation going — stay up on news in art and culture.</p>
+    <form class="kit-form" onsubmit="kitSubscribe(event, this)">
+      <input type="email" name="email_address" placeholder="Your email address" required />
+      <button type="submit">Get Informed</button>
+    </form>
+    <p class="kit-success">You're in! Check your inbox.</p>
   </div>
 </div>
 
@@ -1009,10 +1036,10 @@
       }, 200);
     }
     // show Kit popup when Take Notes page opens (once per session)
-    if (id === 'blog' && !sessionStorage.getItem('kit-popup-shown')) {
+    if (id === 'blog' && !sessionStorage.getItem('kit-shown')) {
       setTimeout(function() {
         document.getElementById('kit-popup-overlay').classList.add('open');
-        sessionStorage.setItem('kit-popup-shown', '1');
+        sessionStorage.setItem('kit-shown', '1');
       }, 1500);
     }
     // update browser URL
@@ -1063,6 +1090,26 @@
   function filterBlog(btn, cat) {
     document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+  }
+  function kitSubscribe(e, form) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="email_address"]').value;
+    var btn = form.querySelector('button');
+    btn.textContent = 'Subscribing…';
+    btn.disabled = true;
+    fetch('https://app.convertkit.com/forms/ad2636b870/subscriptions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({ email_address: email })
+    }).then(function() {
+      form.style.display = 'none';
+      var success = form.nextElementSibling;
+      if (success) success.style.display = 'block';
+    }).catch(function() {
+      btn.textContent = 'Get Informed';
+      btn.disabled = false;
+      window.open('https://trinity-alana.kit.com/ad2636b870', '_blank');
+    });
   }
   function playYouTube(thumbEl, videoId) {
     const iframe = document.createElement('iframe');
