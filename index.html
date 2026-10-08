@@ -121,6 +121,15 @@
     .add-card:hover { border-color: var(--blue); }
     .add-card i { font-size: 22px; color: var(--muted); }
     .add-card span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    /* Kit embed wrapper */
+    .kit-section { padding: 56px 0 40px; border-top: 1px solid var(--border); }
+    .kit-section-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 20px; }
+    /* Kit popup */
+    #kit-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.65); z-index: 9999; align-items: center; justify-content: center; }
+    #kit-popup-overlay.open { display: flex; }
+    #kit-popup-box { background: var(--white); border-radius: 16px; padding: 40px 36px 32px; max-width: 480px; width: 92%; position: relative; max-height: 90vh; overflow-y: auto; }
+    #kit-popup-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 22px; color: var(--muted); cursor: pointer; line-height: 1; }
+    #kit-popup-close:hover { color: var(--text); }
 
     /* WORK PAGE INTRO BOXES */
     .work-intro-boxes { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
@@ -464,6 +473,10 @@
   <div class="section">
     <div class="section-header"><span class="section-label">From Take Notes</span><button class="see-all" onclick="showPage('blog')">Read all →</button></div>
     <div class="placeholder-zone"><i class="ti ti-pencil"></i><div class="ph-title">Coming soon to Take Notes</div><p class="ph-sub">Your essays, podcast episodes, and journalism will appear here once published.</p><button class="btn-blue" onclick="showPage('blog')" style="margin-top:8px;">Go to Take Notes</button></div>
+    <div class="kit-section">
+      <span class="kit-section-label">Stay in the loop</span>
+      <script async data-uid="ad2636b870" src="https://trinity-alana.kit.com/ad2636b870/index.js"></script>
+    </div>
   </div>
 
   <footer class="footer">
@@ -925,7 +938,19 @@
     <div class="placeholder-zone"><i class="ti ti-pencil"></i><div class="ph-title">Nothing published yet — but that changes soon.</div><p class="ph-sub">Your essays, podcast episodes, Substack pieces, and journalism will live here.</p></div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;"><div class="add-card"><i class="ti ti-notes"></i><span>Add essay</span></div><div class="add-card"><i class="ti ti-headphones"></i><span>Add podcast episode</span></div><div class="add-card"><i class="ti ti-article"></i><span>Add journalism piece</span></div></div>
   </div>
+  <div class="section kit-section" style="border-top:1px solid var(--border);">
+    <span class="kit-section-label">Enjoyed this? Keep learning.</span>
+    <script async data-uid="ad2636b870" src="https://trinity-alana.kit.com/ad2636b870/index.js"></script>
+  </div>
   <footer class="footer"><div class="footer-top"><div><div class="footer-brand">Take <span>Notes</span></div><p class="footer-tagline">By Trinity Alana · © 2026</p></div><div class="footer-cols"><div><span class="footer-col-title">Navigate</span><button class="footer-col-link" onclick="showPage('home')">Home</button><button class="footer-col-link" onclick="showPage('booking')">Book Me</button></div></div></div><div class="footer-bottom"><span class="footer-copy">© 2026 Trinity Alana.</span></div></footer>
+</div>
+
+<!-- Kit email popup -->
+<div id="kit-popup-overlay">
+  <div id="kit-popup-box">
+    <button id="kit-popup-close" onclick="document.getElementById('kit-popup-overlay').classList.remove('open')">×</button>
+    <script async data-uid="ad2636b870" src="https://trinity-alana.kit.com/ad2636b870/index.js"></script>
+  </div>
 </div>
 
 <!-- ═══ BOOKING ═══ -->
@@ -982,6 +1007,13 @@
       setTimeout(function() {
         if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
       }, 200);
+    }
+    // show Kit popup when Take Notes page opens (once per session)
+    if (id === 'blog' && !sessionStorage.getItem('kit-popup-shown')) {
+      setTimeout(function() {
+        document.getElementById('kit-popup-overlay').classList.add('open');
+        sessionStorage.setItem('kit-popup-shown', '1');
+      }, 1500);
     }
     // update browser URL
     if (!skipHistory) {
